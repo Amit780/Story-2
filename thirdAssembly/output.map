@@ -1,0 +1,44 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD file.o
+
+.text           0x0000000000000000       0x18
+ .text          0x0000000000000000       0x18 file.o
+                0x0000000000000000                _start
+
+.data           0x0000000000000018        0x0
+ .data          0x0000000000000018        0x0 file.o
+
+.bss            0x0000000000000018        0x0
+ .bss           0x0000000000000018        0x0 file.o
+
+BOOTUP_0
+ */file.o(*)
+OUTPUT(file.elf elf64-littleriscv)
+
+.riscv.attributes
+                0x0000000000000000       0x37
+ .riscv.attributes
+                0x0000000000000000       0x37 file.o
+
+.debug_line     0x0000000000000000       0x4c
+ .debug_line    0x0000000000000000       0x4c file.o
+
+.debug_info     0x0000000000000000       0x27
+ .debug_info    0x0000000000000000       0x27 file.o
+
+.debug_abbrev   0x0000000000000000       0x14
+ .debug_abbrev  0x0000000000000000       0x14 file.o
+
+.debug_aranges  0x0000000000000000       0x30
+ .debug_aranges
+                0x0000000000000000       0x30 file.o
+
+.debug_str      0x0000000000000000       0x3c
+ .debug_str     0x0000000000000000       0x3c file.o
