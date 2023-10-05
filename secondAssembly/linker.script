@@ -1,0 +1,8 @@
+ENTRY(_start)
+
+SECTIONS
+{
+    BOOTUP_0 0x80000000 : AT(0x8000000){
+        */file2.o(*)
+    }
+}
